@@ -80,18 +80,19 @@ async function main(){
       console.log('sending websocket message on leaderboard update')
       console.log({message, channel})
       
-      const replies = await redisClient.zRangeWithScores('leaderboard', '+inf', 0, {
+      const leaderboard = await redisClient.zRangeWithScores('leaderboard', '+inf', 0, {
         BY: 'SCORE',
         REV: true,
-        LIMIT: { offset: 0, count: 5 }
+        LIMIT: { offset: 0, count: 10 }
       })
       
-      console.log({replies})
+      console.log({leaderboard})
 
-      ws.send('leaderboard updated')
+      ws.send(JSON.stringify({leaderboard}))
     })
 
     ws.on('message', async function message(data: any) {
+      // do nothing
       console.log(`received message with data: ${data}`)
     })
   });
