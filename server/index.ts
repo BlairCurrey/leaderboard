@@ -29,32 +29,31 @@ async function main(){
   });
 
   router.post('/leaderboard', async (ctx) => {
-  console.log('form submit')
-  console.log(ctx.request.body)
-  // const { score, name }: any = ctx.request.body as Record<string, any> | undefined
-  const { score, name } = ctx.request.body as any ?? {}
+    console.log('form submit')
+    console.log(ctx.request.body)
+    const { score, name } = ctx.request.body as any ?? {}
 
-  if (!score || !name) {
-    throw new Error('Must provide both score and name')
-  }
+    if (!score || !name) {
+      throw new Error('Must provide both score and name')
+    }
 
-  try {
-    // const added = await redisClient.zAdd('leaderboard', [{value: name, score: score}]);
-    const added = await redisClient.zAdd('leaderboard', [{value: name, score: score}]);
-    console.log({added})
-    redisClient.publish('leaderboard', 'added')
-  } catch (err) {
-    console.error(err)
-  }
+    try {
+      // const added = await redisClient.zAdd('leaderboard', [{value: name, score: score}]);
+      const added = await redisClient.zAdd('leaderboard', [{value: name, score: score}]);
+      console.log({added})
+      redisClient.publish('leaderboard', 'added')
+    } catch (err) {
+      console.error(err)
+    }
 
-  // Get all of the values/scores from the sorted set using
-  // the scan approach:
-  // https://redis.io/commands/zscan
-  // for await (const memberWithScore of redisClient.zScanIterator('leaderboard')) {
-  //   console.log(memberWithScore);
-  // }
+    // Get all of the values/scores from the sorted set using
+    // the scan approach:
+    // https://redis.io/commands/zscan
+    // for await (const memberWithScore of redisClient.zScanIterator('leaderboard')) {
+    //   console.log(memberWithScore);
+    // }
 
-  ctx.body = { success: true };
+    ctx.body = { success: true };
   });
   app.use(router.routes());
   app.use(router.allowedMethods());

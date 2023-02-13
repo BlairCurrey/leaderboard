@@ -5,17 +5,24 @@ specifiers:
   '@types/koa-bodyparser': ^4.3.10
   '@types/koa-router': ^7.4.4
   '@types/ws': ^8.5.4
+  dotenv: ^16.0.3
+  inversify: ^6.0.1
   koa: ^2.14.1
   koa-bodyparser: ^4.3.0
   koa-router: ^12.0.0
   redis: ^4.6.4
+  reflect-metadata: ^0.1.13
+  typescript: ^4.9.5
   ws: ^8.12.0
 
 dependencies:
+  dotenv: 16.0.3
+  inversify: 6.0.1
   koa: 2.14.1
   koa-bodyparser: 4.3.0
   koa-router: 12.0.0
   redis: 4.6.4
+  reflect-metadata: 0.1.13
   ws: 8.12.0
 
 devDependencies:
@@ -23,6 +30,7 @@ devDependencies:
   '@types/koa-bodyparser': 4.3.10
   '@types/koa-router': 7.4.4
   '@types/ws': 8.5.4
+  typescript: 4.9.5
 
 packages:
 
@@ -302,6 +310,11 @@ packages:
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
     dev: false
 
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: false
+
   /ee-first/1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
     dev: false
@@ -400,6 +413,10 @@ packages:
 
   /inherits/2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
+    dev: false
+
+  /inversify/6.0.1:
+    resolution: {integrity: sha512-B3ex30927698TJENHR++8FfEaJGqoWOgI6ZY5Ht/nLUsFCwHn6akbwtnUAPCgUepAnTpe2qHxhDNjoKLyz6rgQ==}
     dev: false
 
   /is-generator-function/1.0.10:
@@ -560,6 +577,10 @@ packages:
       '@redis/time-series': 1.0.4_@redis+client@1.5.5
     dev: false
 
+  /reflect-metadata/0.1.13:
+    resolution: {integrity: sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==}
+    dev: false
+
   /safe-buffer/5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
     dev: false
@@ -607,6 +628,12 @@ packages:
       media-typer: 0.3.0
       mime-types: 2.1.35
     dev: false
+
+  /typescript/4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
 
   /unpipe/1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
